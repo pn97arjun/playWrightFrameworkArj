@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
-
-test('open Google URL', async ({ page }) => {
+test.beforeEach(async ({ page }) => {
     await page.goto('https://www.google.com');
+});
+test('open Google URL', async ({ page }) => {
     await expect(page).toHaveURL('https://www.google.com/');
     await expect(page).toHaveTitle(/Google/);
     await page.click('//textarea[@title="Search"]');
