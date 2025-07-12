@@ -19,7 +19,5 @@ test('open Google URL', async ({ page }) => {
     await test.info().attach('Google Search Results Screenshot', {
         body: resultsScreenshot,
         contentType: 'image/png'
-    });
-
-    
+    });  
 });
