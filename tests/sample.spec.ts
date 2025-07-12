@@ -20,4 +20,5 @@ test('open Google URL', async ({ page }) => {
         body: resultsScreenshot,
         contentType: 'image/png'
     });
+    
 });
