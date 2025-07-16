@@ -3,13 +3,14 @@ test.beforeEach(async ({ page }) => {
     await page.goto('https://www.google.com');
 });
 test('open Google URL', async ({ page }) => {
+    await test.step('Step1 : test Case started', async () => {});
     await expect(page).toHaveURL('https://www.google.com/');
     await expect(page).toHaveTitle(/Google/);
     await page.click('//textarea[@title="Search"]');
     await page.fill('textarea[title="Search"]', 'playwright');
     await page.keyboard.press('Enter');
     //await page.waitForSelector('ul[role="listbox"] li', { state: 'visible' });
-    const screenshot = await page.screenshot({ path: 'playwright-report/playwright-reportgoogle_search.png' });
+    const screenshot = await page.screenshot({ path: 'playwright-report/google_search.png' });
     await test.info().attach('Google Search Screenshot', {
         body: screenshot,
         contentType: 'image/png'
