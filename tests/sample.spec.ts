@@ -1,14 +1,17 @@
 import { test, expect } from '@playwright/test';
+import dotenv from 'dotenv';
 test.beforeEach(async ({ page }) => {
-    await page.goto('https://www.google.com');
+    dotenv.config();
+    await page.goto(process.env.URL1 as string);
 });
 test('open Google URL', async ({ page }) => {
     await test.step('Step1 : test Case started', async () => {});
-    await expect(page).toHaveURL('https://www.google.com/');
+    await expect(page).toHaveURL(process.env.URL1 as string);
     await expect(page).toHaveTitle(/Google/);
     await page.click('//textarea[@title="Search"]');
-    await page.fill('textarea[title="Search"]', 'playwright');
-    await page.keyboard.press('Enter');
+    let searchValue= process.env.TEXT1 as string;
+    await page.fill('textarea[title="Search"]', searchValue);
+    await page.locator('textarea[title="Search"]').press('Enter');
     //await page.waitForSelector('ul[role="listbox"] li', { state: 'visible' });
     const screenshot = await page.screenshot({ path: 'playwright-report/google_search.png' });
     await test.info().attach('Google Search Screenshot', {
