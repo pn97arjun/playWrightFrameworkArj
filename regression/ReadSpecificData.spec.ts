@@ -18,9 +18,8 @@ const records: TestRecord[] = parse(csvData, {
 });
 
 // Assuming you want to run a specific test_id, e.g., '123'
-let specificTestId = '1';
+let specificTestId = 'TC23451';
 let testToRun = records.find(record => record.id === specificTestId);
-
 
   if (testToRun) {
     test(`Test first: ${testToRun.id} `, async ({ page }) => {
@@ -45,7 +44,7 @@ let testToRun = records.find(record => record.id === specificTestId);
   }
 
 
-specificTestId = '2';
+specificTestId = 'TC12345';
 let testToRun2 = records.find(record => record.id === specificTestId);
 
 if (testToRun2) {
