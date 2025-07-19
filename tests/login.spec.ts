@@ -21,10 +21,10 @@ test('Login Auto Lab', async ({page}) => {
     });
 
     // Mask the password in the report
-    await test.info().attach('Decrypted Password (masked)', {
-        body: Buffer.from('********'),
-        contentType: 'text/plain'
-    });
+   // await test.info().attach('Decrypted Password (masked)', {
+   //     body: Buffer.from('********'),
+   //     contentType: 'text/plain'
+   // });
     await loginButton.click();
 
     const title = await page.title();

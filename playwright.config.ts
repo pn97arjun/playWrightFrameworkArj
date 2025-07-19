@@ -66,7 +66,7 @@ export default defineConfig({
        use: { ...devices['Desktop Edge'], channel: 'msedge' },
      },
      {
-       name: 'Google Chrome',
+       name: 'GoogleChrome',
        use: { ...devices['Desktop Chrome'], channel: 'chrome' },
      },
   ],
