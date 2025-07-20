@@ -5,26 +5,18 @@ import dotenv from 'dotenv';
 import { readFileSync } from 'fs';
 import { parse } from 'csv-parse/sync';
 test.beforeEach(async ({ page }) => {
-     dotenv.config();
-    const loginPage = new LoginPage(page);
-    
-    console.log('Username:', process.env.USERNAMEAUTO)
-    console.log('Password:', process.env.PASSWORD)
-    console.log('Encryption Key:', process.env.ENCRYPTION_KEY)
+     
 
     // : Login into the application
-    await loginPage.loginIntoApplication(
-        process .env.URL2 as string,
-        process.env.USERNAMEAUTO as string,
-        process.env.PASSWORD as string,
-        process.env.ENCRYPTION_KEY as string
-    );
+    
 });
 // Read and parse the CSV data
 const csvData = readFileSync('testdata/testdata.csv', 'utf8');
 interface TestRecord {
   id: string;
   username: string;
+  password: string;
+  encryption_key: string;
   partname: string;
   description: string;
   // add other fields as needed
@@ -45,7 +37,17 @@ test(`${TC23451.id} ${TC23451.description}`, async ({page}) => {
    const loginPage = new LoginPage(page);
    const homePage = new HomePage(page);
 
-    // Step 1: Validate left links on the home page
+   //step 1: login into application
+    dotenv.config();
+    console.log('Username:', TC23451.username)
+    console.log('Password:', TC23451.password) 
+    await loginPage.loginIntoApplication(
+        process .env.URL2 as string,
+        TC23451.username,
+        TC23451.password,
+        process.env.ENCRYPTION_KEY as string
+    );
+    // Step 2: Validate left links on the home page
     await homePage.validateLeftLinks();
 
    
@@ -61,9 +63,18 @@ const TC12345 = records.find(record => record.id === specificTestId2);
 
 if (TC12345) {
 test(`${TC12345.id} ${TC12345.description}`, async ({page}) => {
-      
+    const loginPage = new LoginPage(page);  
     const homePage = new HomePage(page);
-
+    //step 1: login into application
+    dotenv.config();
+    console.log('Username:', TC12345.username)
+    console.log('Password:', TC12345.password)
+    await loginPage.loginIntoApplication(
+        process .env.URL2 as string,
+        TC12345.username,
+        TC12345.password,
+        process.env.ENCRYPTION_KEY as string
+    );
     // Step 1: Perform search
     await homePage.performSearch(TC12345.partname);
 
