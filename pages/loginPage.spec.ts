@@ -1,6 +1,5 @@
 import {expect,type Locator,type Page,test} from '@playwright/test';
-import dotenv from 'dotenv';
-import { encryptData,decryptData } from '../tests/secureData.spec';
+import { decryptData } from '../Utility/commonUtil';
 
 
 
@@ -20,11 +19,12 @@ export class LoginPage {
         this.loginButton = page.locator("xpath=//input[@value='Login']");
     }
 
-    async loginIntoApplication(urlcart,username, password, encryptionKey) {
+    async loginIntoApplication(urlcart: string, username: string, password: string, encryptionKey: string) {
 
         await this.page.goto(urlcart);
         await this.emailInput.fill(username);
         const decryptPassword = decryptData(password, encryptionKey);
+        console.log("Password: ",decryptPassword)
          await test.step('Fill password input (masked)', async () => {
                 await this.passwordInput.fill(decryptPassword);
                 // Optionally, attach a masked value for reporting

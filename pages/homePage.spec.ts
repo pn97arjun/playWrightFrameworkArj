@@ -34,7 +34,7 @@ export class HomePage {
         await this.page.screenshot({ path: 'playwright-report/home_page_links.png' });
     }
 
-    async performSearch(searchValue) {
+    async performSearch(searchValue: string) {
         await this.searchInput.fill(searchValue);
         await this.searchInput.press('Enter');
     }

@@ -1,6 +1,6 @@
 import {test, expect, Locator} from '@playwright/test';
 import dotenv from 'dotenv';
-import { encryptData,decryptData } from '../tests/secureData.spec';
+import { decryptData } from '../Utility/commonUtil';
 
 test('Login Auto Lab', async ({page}) => {
     dotenv.config();
