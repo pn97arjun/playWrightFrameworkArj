@@ -26,7 +26,7 @@ test(`Get Data from CSV - ${recorde.id}`, async ({page}) => {
     const loginButton:Locator=page.locator("xpath=//input[@value='Login']");
     await emailInput.fill(recorde.username);
     let encryptionkey=process.env.ENCRYPTION_KEY as string;
-    console.log(encryptionkey)
+    console.log("Encryption key",encryptionkey)
     const decryptPassword = decryptData(recorde.password, encryptionkey);
             console.log("Password: ",decryptPassword)
              await test.step('Fill password input (masked)', async () => {
