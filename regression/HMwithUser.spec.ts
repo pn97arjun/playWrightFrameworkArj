@@ -32,7 +32,7 @@ const specificTestId = 'TC23451';
 const TC23451 = records.find(record => record.id === specificTestId);
 import { encryptData,decryptData } from '../tests/secureData.spec';
  if (TC23451) {
-test(`${TC23451.id} ${TC23451.description}`, async ({page}) => {
+test(`Login and validate links}`, async ({page}) => {
    console.log(TC23451.partname)
    const loginPage = new LoginPage(page);
    const homePage = new HomePage(page);

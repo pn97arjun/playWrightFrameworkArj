@@ -15,6 +15,8 @@ test('Aria Role Locator test',async({page})=>{
 
      await expect(page.getByRole('button',{ name:'Continue'})).toBeVisible()
    await page.getByRole('button',{ name:'Continue'}).click()
+   //const shadowInput = page.locator('css=your-shadow-host-selector').locator('input');
+   //await shadowInput.click();
    
 
 });
