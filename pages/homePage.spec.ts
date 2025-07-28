@@ -6,6 +6,7 @@ export class HomePage {
     private searchResult: Locator;
     private searchHeading: Locator;
     private listofLeftLinks: Locator;
+    private droplocator: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -13,6 +14,7 @@ export class HomePage {
         this.listofLeftLinks = page.locator('xpath=//div[@id="content"]//ul[@class="list-unstyled"]/li/a');
         this.searchResult = page.locator('xpath=//div[@class="caption"]/h4/a');
         this.searchHeading = page.locator('xpath=//h2[contains(text(),"Products meeting the search")]');
+        this.droplocator=page.locator('css=select#Contact_CountryCode');
     }
 
     async validateLeftLinks() {
@@ -52,5 +54,8 @@ export class HomePage {
             'Samsung Galaxy Tab 10.1'
         ]);
 
+    }
+    async validatdrpdownCountry(dropValue: string){
+        await this.droplocator.selectOption(dropValue)
     }
 }

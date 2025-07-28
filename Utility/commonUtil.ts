@@ -1,4 +1,5 @@
 import CryptoJS from 'crypto-js';
+import { Locator } from 'playwright/test';  
 
 export function encryptData(data: string, secretKey: string): string {
     const ciphertext = CryptoJS.AES.encrypt(data, secretKey).toString();
