@@ -26,5 +26,5 @@ function encryptFileJS() {
 
 encryptFileJS();
 
-const dat1=decryptData("U2FsdGVkX19cDQb2PdAVpb+x3c+qBufY8gyYoqz8KmI=","Testing1!")
+const dat1=decryptData("U2FsdGVkX18NfNrTAa23qz1sYAbKk4Hr8xdfvXf9Hh0=","Testing1!")
 console.log(dat1);
