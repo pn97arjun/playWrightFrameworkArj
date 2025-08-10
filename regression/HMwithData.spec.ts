@@ -46,6 +46,7 @@ test(`${TC23451.id} ${TC23451.description}`, async ({page}) => {
    const homePage = new HomePage(page);
 
     // Step 1: Validate left links on the home page
+    await test.step('Running in devops',async()=>{});
     await homePage.validateLeftLinks();
 
    
@@ -65,6 +66,7 @@ test(`${TC12345.id} ${TC12345.description}`, async ({page}) => {
     const homePage = new HomePage(page);
 
     // Step 1: Perform search
+    await test.step('Running in devops',async()=>{});
     await homePage.performSearch(TC12345.partname);
 
     // Step 2: Verify search results

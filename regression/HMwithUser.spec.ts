@@ -40,6 +40,7 @@ test(`Login and validate links}`, async ({page}) => {
    //step 1: login into application
     dotenv.config();
     console.log('Username:', TC23451.username)
+    await test.step('Running in devops',async()=>{});
     //console.log('Password:', TC23451.password) 
     await loginPage.loginIntoApplication(
         process .env.URL2 as string,
