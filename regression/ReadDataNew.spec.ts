@@ -27,7 +27,7 @@ test(`Get Data from CSV - ${recorde.id}`, async ({page}) => {
       //step 1: login into application
        dotenv.config();
        console.log('Username:', recorde.username)
-       console.log('Password:', recorde.password) 
+       //console.log('Password:', recorde.password) 
        await loginPage.loginIntoApplication(
            process .env.URL2 as string,
            recorde.username,

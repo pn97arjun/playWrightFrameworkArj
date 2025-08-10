@@ -40,7 +40,7 @@ test(`Login and validate links}`, async ({page}) => {
    //step 1: login into application
     dotenv.config();
     console.log('Username:', TC23451.username)
-    console.log('Password:', TC23451.password) 
+    //console.log('Password:', TC23451.password) 
     await loginPage.loginIntoApplication(
         process .env.URL2 as string,
         TC23451.username,
@@ -68,7 +68,7 @@ test(`${TC12345.id} ${TC12345.description}`, async ({page}) => {
     //step 1: login into application
     dotenv.config();
     console.log('Username:', TC12345.username)
-    console.log('Password:', TC12345.password)
+    //console.log('Password:', TC12345.password)
     await loginPage.loginIntoApplication(
         process .env.URL2 as string,
         TC12345.username,

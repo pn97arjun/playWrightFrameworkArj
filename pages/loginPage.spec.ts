@@ -24,7 +24,7 @@ export class LoginPage {
         await this.page.goto(urlcart);
         await this.emailInput.fill(username);
         const decryptPassword = decryptData(password, encryptionKey);
-        console.log("Password: ",decryptPassword)
+        //console.log("Password: ",decryptPassword)
          await test.step('Fill password input (masked)', async () => {
                 await this.passwordInput.fill(decryptPassword);
                 // Optionally, attach a masked value for reporting

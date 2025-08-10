@@ -9,8 +9,8 @@ test.beforeEach(async ({ page }) => {
     const loginPage = new LoginPage(page);
     
     console.log('Username:', process.env.USERNAMEAUTO)
-    console.log('Password:', process.env.PASSWORD)
-    console.log('Encryption Key:', process.env.ENCRYPTION_KEY)
+    //console.log('Password:', process.env.PASSWORD)
+    //console.log('Encryption Key:', process.env.ENCRYPTION_KEY)
 
     // : Login into the application
     await loginPage.loginIntoApplication(
